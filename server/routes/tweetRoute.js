@@ -1,6 +1,6 @@
 import express from 'express';
-import isAuthenticated from '../config/auth';
-import { createTweet, deleteTweet, getAllTweets, getFollowingTweets, likeOrDislike } from '../controllers/tweetController';
+import isAuthenticated from '../config/auth.js';
+import { createTweet, deleteTweet, getAllTweets, getFollowingTweets, likeOrDislike } from '../controllers/tweetController.js';
 
 
 
