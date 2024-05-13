@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import userSlice from "./userSlice";
-import tweetSlice from "./tweetSlice";
+import userSlice from "./userSlice.js";
+import tweetSlice from "./tweetSlice.js";
 
 
 import {
@@ -23,11 +23,16 @@ const persistConfig = {
 }
 
 
+const rootReducer = combineReducers({
+    user:userSlice,
+    tweet:tweetSlice,
+})
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 
 const store = configureStore({
-    reducer: persistReducer,
+    reducer: persistedReducer,
     middleware: (getDefaultMiddleware) => 
         getDefaultMiddleware({
             serializableCheck: {
