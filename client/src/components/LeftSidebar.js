@@ -16,7 +16,7 @@ import { getMyProfile, getOtherUsers, getUser } from '../redux/userSlice';
 
 const LeftSidebar = () => {
 
-    const {user} = useSelector(store => state.user);
+    const {user} = useSelector(store => store.user);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
