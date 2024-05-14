@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import { USER_API_END_POINT } from "../utils/constant";
+import { USER_API_END_POINT } from "../utils/constant.js";
 import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import { getUser } from '../redux/userSlice';
+import { getUser } from '../redux/userSlice.js';
 
 const Login = () => {
 
@@ -29,6 +29,8 @@ const Login = () => {
                     withCredentials: true
                 });
 
+                console.log("Login response:", res);
+
                 dispatch(getUser(res?.data?.user));
 
                 if (res.data.success) {
@@ -48,6 +50,8 @@ const Login = () => {
                     },
                     withCredentials: true
                 });
+
+                console.log("Signup response:", res);
 
                 if (res.data.success) {
                     setIsLogin(true);
